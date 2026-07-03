@@ -10,27 +10,33 @@ Instructions:
 Complete each TODO.
 */
 
+
 // 1) Create and return a person object.
 // Use keys: firstName, lastName, department
 function makePerson(firstName, lastName, department) {
-  // TODO
+  return {
+    firstName: firstName,
+    lastName: lastName,
+    department: department
+  }
 }
 
 // 2) Return a property using bracket notation.
 function getProperty(obj, key) {
-  // TODO
+  return obj[key]
 }
 
 // 3) Convert this function into an arrow function by completing the body.
 const square = (n) => {
-  // TODO
+  return n ** 2
 };
 
 // 4) Create a base Shape class and two subclasses: Rectangle and Circle.
 // Each subclass should implement area().
 class Shape {
   constructor(x, y) {
-    // TODO
+    this.x = x;
+    this.y = y;
   }
 
   area() {
@@ -40,27 +46,30 @@ class Shape {
 
 class Rectangle extends Shape {
   constructor(x, y, width, height) {
-    // TODO
+    super(x, y)
+    this.width = width
+    this.height = height
   }
 
   area() {
-    // TODO
+    return this.width * this.height
   }
 }
 
 class Circle extends Shape {
   constructor(x, y, radius) {
-    // TODO
+    super(x, y)
+    this.radius = radius
   }
 
   area() {
-    // TODO
+    return Math.PI * (this.radius ** 2)
   }
 }
 
 // 5) Demonstrate polymorphism by returning the areas of all shapes.
 function getAreas(shapes) {
-  // TODO
+  return shapes.map(shape => shape.area())
 }
 
 module.exports = {
